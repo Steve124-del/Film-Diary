@@ -2,19 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Film Diary</title>
+  <title>Login - Film Diary</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div>🎬 Film Diary</div>
-    <button id="logoutBtn">Logout</button>
-  </header>
-
-  <div class="movie-list" id="movieList">
-    <!-- Movies will be injected here -->
+  <div class="login-box">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Enter your name">
+    <button onclick="login()">Login</button>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    function login() {
+      const user = document.getElementById("username").value.trim();
+      if (user) {
+        localStorage.setItem("loggedInUser", user);
+        window.location.href = "dashboard.html";
+      } else {
+        alert("Please enter your name");
+      }
+    }
+  </script>
 </body>
 </html>
