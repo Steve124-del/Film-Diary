@@ -1,0 +1,101 @@
+
+body {
+  background-color: #111;
+  color: #eee;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #00ffb3;
+  margin-bottom: 30px;
+}
+
+.movie-card {
+  display: flex;
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+}
+
+.movie-card img {
+  width: 200px;
+  height: auto;
+}
+
+.movie-details {
+  padding: 20px;
+}
+
+.movie-details h2 {
+  margin-top: 0;
+  color: #ffd700;
+}
+
+.rating {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.review {
+  font-style: italic;
+}
+
+.login-container {
+  max-width: 400px;
+  margin: 100px auto;
+  background: #1e1e1e;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+  text-align: center;
+}
+
+.login-container h2 {
+  color: #00ffb3;
+}
+
+.login-container input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 6px;
+  background: #333;
+  color: white;
+}
+
+.login-container button {
+  padding: 10px 20px;
+  background-color: #00ffb3;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #111;
+  font-weight: bold;
+}
+
+.logout-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background-color: #ff3333;
+}

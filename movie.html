@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Movie Details</title>
+</head>
+<body style="background:#121212; color:white; font-family:sans-serif; padding:20px;">
+  <div id="movie-info"></div>
+
+  <h3>Your Review</h3>
+  <form id="review-form">
+    <textarea id="review" placeholder="Write your review..." rows="5" cols="50"></textarea><br><br>
+    <label>Rating: 
+      <select id="rating">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        ...
+        <option value="10">10</option>
+      </select>
+    </label><br><br>
+    <button type="submit">Save Review</button>
+  </form>
+
+  <div id="saved-review" style="margin-top:20px;"></div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const movieTitle = params.get("title");
+    const infoDiv = document.getElementById("movie-info");
+
+    // Dummy data (can later be fetched from DB)
+    const movies = {
+      "JohnWick4": {
+        title: "John Wick: Chapter 4",
+        year: "2023",
+        poster: "https://image.tmdb.org/t/p/w500/7I6VUdPj6tQECNHdviJkUHD2u89.jpg"
+      },
+      // add others here...
+    };
+
+    const movie = movies[movieTitle];
+
+    if (movie) {
+      infoDiv.innerHTML = `
+        <img src="${movie.poster}" style="width:200px;"><br>
+        <h2>${movie.title} (${movie.year})</h2>
+      `;
+    }
+
+    // Load saved review
+    const reviewKey = "review_" + movieTitle;
+    const saved = localStorage.getItem(reviewKey);
+    if (saved) {
+      const obj = JSON.parse(saved);
+      document.getElementById("review").value = obj.text;
+      document.getElementById("rating").value = obj.rating;
+      document.getElementById("saved-review").innerHTML = `<h4>Your Previous Review:</h4><p>${obj.text} (Rating: ${obj.rating})</p>`;
+    }
+
+    document.getElementById("review-form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const text = document.getElementById("review").value;
+      const rating = document.getElementById("rating").value;
+      localStorage.setItem(reviewKey, JSON.stringify({ text, rating }));
+      alert("Review saved!");
+    });
+  </script>
+</body>
+</html>

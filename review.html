@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Film Diary – Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background-color: #121212;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+    }
+
+    header {
+      background-color: #1f1f1f;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 24px;
+      color: #66cc66;
+    }
+
+    #logoutBtn {
+      background-color: #ff4d4d;
+      border: none;
+      color: white;
+      padding: 8px 16px;
+      font-size: 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    #logoutBtn:hover {
+      background-color: #e60000;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 20px;
+      padding: 30px;
+    }
+
+    .card {
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      margin: 10px 0 5px;
+      font-size: 16px;
+      color: #fff;
+    }
+
+    .card p {
+      margin: 0 0 10px;
+      font-size: 14px;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div>🎬 Film Diary</div>
+  <button id="logoutBtn">Logout</button>
+</header>
+
+<div class="grid">
+  <div class="card">
+    <img src="https://image.tmdb.org/t/p/w500/7I6VUdPj6tQECNHdviJkUHD2u89.jpg" alt="John Wick: Chapter 4">
+    <h3>John Wick: Chapter 4</h3>
+    <p>2023</p>
+  </div>
+  <div class="card">
+    <a href="movie.html?title=JohnWick4">John Wick: Chapter 4</a>
+    <img src="https://image.tmdb.org/t/p/w500/r7XifzvtezNt31ypvsmb6Oqxw49.jpg" alt="DC League of Super-Pets">
+    <h3>DC League of Super-Pets</h3>
+    <p>2022</p>
+  </div>
+  <div class="card">
+    <img src="https://image.tmdb.org/t/p/w500/9GBhzXMFjgcZ3FdR9w3bUMMTps5.jpg" alt="The Marvels">
+    <h3>The Marvels</h3>
+    <p>2023</p>
+  </div>
+  <div class="card">
+    <img src="https://image.tmdb.org/t/p/w500/bkpPTZUdq31UGDovmszsg2CchiI.jpg" alt="Trolls Band Together">
+    <h3>Trolls Band Together</h3>
+    <p>2023</p>
+  </div>
+</div>
+
+<script>
+  document.getElementById("logoutBtn").addEventListener("click", function () {
+    alert("You have been logged out.");
+    // Optionally clear storage and redirect
+    localStorage.removeItem("loggedIn");
+    window.location.href = "login.html"; // change if your login page is named differently
+  });
+</script>
+
+</body>
+</html>
