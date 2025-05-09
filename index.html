@@ -1,27 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Login - Film Diary</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Film Diary</title>
+  <link rel="stylesheet" href="styles/style.css" />
 </head>
 <body>
-  <div class="login-box">
-    <h2>Login</h2>
-    <input type="text" id="username" placeholder="Enter your name">
-    <button onclick="login()">Login</button>
-  </div>
+  <header>
+    <div>Film Diary</div>
+    <button id="logoutBtn">Logout</button>
+  </header>
 
-  <script>
-    function login() {
-      const user = document.getElementById("username").value.trim();
-      if (user) {
-        localStorage.setItem("loggedInUser", user);
-        window.location.href = "dashboard.html";
-      } else {
-        alert("Please enter your name");
-      }
-    }
-  </script>
+  <main>
+    <h2>Movie List</h2>
+    <ul id="movieList"></ul>
+  </main>
+
+  <script src="scripts/main.js"></script>
 </body>
 </html>

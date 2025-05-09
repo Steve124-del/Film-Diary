@@ -1,18 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
   <title>Movie Details</title>
-  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div>🎬 Film Diary</div>
-    <button id="logoutBtn">Logout</button>
-  </header>
-
-  <div class="movie-details" id="movieDetails"></div>
-
-  <script src="script.js"></script>
+  <h2 id="movieTitle"></h2>
+  <p id="movieYear"></p>
+  <textarea id="review" placeholder="Write your review..."></textarea>
+  <input type="number" id="rating" placeholder="Rating (1-10)" min="1" max="10" />
+  <button id="saveBtn">Save</button>
+  <script src="scripts/movie.js"></script>
 </body>
 </html>
